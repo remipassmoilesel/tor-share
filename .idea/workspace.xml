@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5bcb6519-529e-4651-af67-1d2100c67335" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/service/privoxy/config" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/service/privoxy/run" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/service.disabled/tor/run" afterPath="$PROJECT_DIR$/service/tor/run" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dockerfile" afterPath="$PROJECT_DIR$/Dockerfile" />
-    </list>
+    <list default="true" id="5bcb6519-529e-4651-af67-1d2100c67335" name="Default" comment="" />
     <ignored path="docker-tor-privoxy-alpine.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -963,12 +958,12 @@
       <updated>1480159002982</updated>
       <workItem from="1480159004287" duration="213000" />
       <workItem from="1480159237494" duration="1130000" />
-      <workItem from="1480179213386" duration="5479000" />
+      <workItem from="1480179213386" duration="5501000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6822000" />
+    <option name="totallyTimeSpent" value="6844000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1368" height="744" extended-state="6" />
