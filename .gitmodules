@@ -4,3 +4,9 @@
 [submodule "www/cha"]
 	path = www/chat
 	url = https://github.com/remipassmoilesel/chipbox-minimalchatextreme
+[submodule "www/chat"]
+	path = www/chat
+	url = https://github.com/remipassmoilesel/chipbox-minimalchatextreme
+[submodule "www/upload"]
+	path = www/upload
+	url = https://github.com/remipassmoilesel/chipbox-simplephpupload
