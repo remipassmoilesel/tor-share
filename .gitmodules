@@ -1,6 +1,6 @@
-[submodule "www/chat"]
-	path = chat
-	url = https://github.com/remipassmoilesel/chipbox-minimalchatextreme
-[submodule "www/upload"]
-	path = upload
+[submodule "www/uploa"]
+	path = www/upload
 	url = https://github.com/remipassmoilesel/chipbox-simplephpupload
+[submodule "www/cha"]
+	path = www/chat
+	url = https://github.com/remipassmoilesel/chipbox-minimalchatextreme
