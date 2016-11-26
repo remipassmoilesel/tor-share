@@ -1,0 +1,11 @@
+RewriteEngine on
+RewriteCond %{REQUEST_URI} !(.*).txt [NC]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule . index.php [L]
+
+
+
+<FilesMatch "\.(txt|html|css)$">
+  Header set Cache-Control "max-age=0, public"
+</FilesMatch>

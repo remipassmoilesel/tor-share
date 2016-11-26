@@ -1,0 +1,22 @@
+{
+  "name": "chipbox-minimalchatextreme",
+  "version": "1.0.0",
+  "description": "An Extremely Minimal PHP/Javascript chat system. Easy to deploy,  Easy to manage, Easy to use.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/remipassmoilesel/chipbox-minimalchatextreme"
+  },
+  "author": "",
+  "license": "GPLv3",
+  "bugs": {},
+  "homepage": "https://github.com/adamoutler/MinimalChatExtreme#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.3.2",
+    "gulp-shell": "^0.5.2"
+  }
+}

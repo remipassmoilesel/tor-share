@@ -1,0 +1,5 @@
+.idea
+node_modules
+rooms/*.txt
+!rooms/empty.txt
+log/*.txt

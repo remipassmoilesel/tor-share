@@ -19,5 +19,6 @@ RUN  usermod --password azerty root
 #RUN  adduser -D -g 0 remipassmoilesel
 
 COPY service /etc/service/
+COPY  /etc/service/
 
 CMD ["runsvdir", "/etc/service"]

@@ -1,0 +1,10 @@
+# Ignore everything
+*
+
+# Except not these files:
+!.gitignore
+!.gitattributes
+!index.php
+!config.php
+!README.md
+!LICENSE

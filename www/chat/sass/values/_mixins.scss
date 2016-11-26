@@ -1,0 +1,45 @@
+@mixin box-shadow($args){
+    -webkit-box-shadow: $args ;
+    -moz-box-shadow: $args ;
+    -o-box-shadow: $args ;
+    box-shadow: $args ;
+}
+
+@mixin vertical-gradient($top,$bottom) {
+    background: $top;
+    background: -moz-linear-gradient(top,  rgba($top,1) 0%, rgba($bottom,1) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba($top,1)), color-stop(100%,rgba($bottom,1)));
+    background: -webkit-linear-gradient(top,  rgba($top,1) 0%,rgba($bottom,1) 100%);
+    background: -o-linear-gradient(top,  rgba($top,1) 0%,rgba($bottom,1) 100%);
+    background: -ms-linear-gradient(top,  rgba($top,1) 0%,rgba($bottom,1) 100%);
+    background: linear-gradient(to bottom,  rgba($top,1) 0%,rgba($bottom,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$top', endColorstr='$top',GradientType=0 );
+}
+
+@mixin transition($args){
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+}
+
+@mixin transform($args){
+    -webkit-transform: $args;
+    -moz-transform: $args;
+    -ms-transform: $args;
+    -o-transform: $args;
+    transform: $args;
+}
+
+@mixin transform-origin($args){
+    -webkit-transform-origin: $args;
+    -moz-transform-origin: $args;
+    -ms-transform-origin: $args;
+    -o-transform-origin: $args;
+    transform-origin: $args;
+}
+
+@mixin appearance($args){
+    -webkit-appearance:none;
+    appearance: none;
+}

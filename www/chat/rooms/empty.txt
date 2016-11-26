@@ -1,0 +1,1 @@
+Please leave this empty file here, to avoid errors when releases are zipped.
