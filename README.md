@@ -60,8 +60,15 @@ Launch Tor-sharing on Ubuntu 16.04:
     
         7b436d6e7ipz4kbo.onion
     
-    
-    
+## SSH connection for file management
 
+    # After you can connect to SSH with default credentials heyhey:N24WMxSPMOTk8
+    $ ssh -v heyhey@172.17.0.2
+    
+    # To change password check Dockerfile:
+    $ vim Dockerfile
+    
+        # Change default credentials here
+        RUN  echo "heyhey:N24WMxSPMOTk8" | chpasswd
 
 

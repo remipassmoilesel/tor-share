@@ -15,12 +15,15 @@ RUN apk add php5-common php5-iconv php5-json php5-gd php5-curl php5-xml php5-pgs
 RUN apk add php5-pdo php5-pdo_pgsql php5-soap php5-xmlrpc php5-posix php5-mcrypt php5-gettext php5-ldap php5-ctype php5-dom
 
 # Dev dependencies
-RUN apk add bash vim
+# RUN apk add bash vim
 
-# generate SSH host keys
+# Configure OpenSSH server
 RUN  ssh-keygen -t dsa -f /etc/ssh/ssh_host_dsa_key
+RUN  ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key
+
+# Change default credentials here
 RUN  adduser -D -g 0 heyhey
-RUN  usermod --password azerty heyhey
+RUN  echo "heyhey:N24WMxSPMOTk8" | chpasswd
 
 # Copy configuration files
 COPY etc/lighttpd/lighttpd.conf /etc/lighttpd/lighttpd.conf
