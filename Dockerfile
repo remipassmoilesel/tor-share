@@ -10,7 +10,8 @@ RUN echo '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk/re
 # Update and install dependencies
 RUN apk update
 RUN apk add tor@testing runit@testing openssh shadow
-RUN apk add lighttpd php5-common php5-iconv php5-json php5-gd php5-curl php5-xml php5-pgsql php5-imap php5-cgi fcgi
+RUN apk add lighttpd lighttpd-mod_auth
+RUN apk add php5-common php5-iconv php5-json php5-gd php5-curl php5-xml php5-pgsql php5-imap php5-cgi fcgi
 RUN apk add php5-pdo php5-pdo_pgsql php5-soap php5-xmlrpc php5-posix php5-mcrypt php5-gettext php5-ldap php5-ctype php5-dom
 
 # Dev dependencies
@@ -23,6 +24,7 @@ RUN  usermod --password azerty heyhey
 
 # Copy configuration files
 COPY etc/lighttpd/lighttpd.conf /etc/lighttpd/lighttpd.conf
+COPY etc/lighttpd/lighttpd-password /etc/lighttpd/lighttpd-password
 COPY etc/php5/php.ini /etc/php5/php.ini
 COPY etc/tor/torrc /etc/tor/torrc
 
