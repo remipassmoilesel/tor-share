@@ -10,6 +10,8 @@ Features:
 * Share files
 * Publish a simple PHP website
 
+![Screenshot](screenshot.png)
+
 ## Authentication
 
 Visits are restricted with Lighttpd basic authentication. Default credentials are:
@@ -31,15 +33,32 @@ Launch Tor-sharing on Ubuntu 16.04:
     # After create a Docker image
     $ git clone https://github.com/remipassmoilesel/tor-sharing
     $ cd tor-sharing
+    $ git submodule init
+    $ git submodule update
     $ docker build . -t tor-sharing
     
     # Then launch a container and bind ports
     $ docker run -d -p 9050:9050 tor-sharing
     
-    /!\ Warning /!\ Never, never, never bind port 80. No one should be able to access container without using TOR. 
+    /!\ Warning /!\ Never, never, never bind port 80. 
+    No one should be able to access container without using TOR. 
     
-    # To get URL to access container, you can visit 127.0.0.1:80 with a normal browser or:
-    $ curl -u anonymous-tux:password http://172.17.0.2/hostname # (where 172.17.0.2 is your container IP)
+## Get URL of hidden service
+    
+    # First get container IP address 
+    $ docker ps 
+        
+        CONTAINER ID        IMAGE               ...
+        2e23d01384ac        ...
+  
+    $ docker inspect --format '{{ .NetworkSettings.IPAddress }}' 2e23d 
+        
+        172.17.0.2
+    
+    # Then visit http://172.17.0.2 adress with a normal browser or:
+    $ curl -u anonymous-tux:password http://172.17.0.2/hostname 
+    
+        7b436d6e7ipz4kbo.onion
     
     
     
