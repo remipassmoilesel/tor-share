@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# This script try to find tor service hostname and copy it in www
+
+file="/var/lib/tor/hidden_service/hostname"
+dest="/www/hostname"
+
+if [ -f "$file" ]
+then
+	cp "$file" "$dest"
+	chmod +r "$dest"
+	echo "'$dest' updated."
+else
+	echo "'$file' not found."
+fi
+
+sleep 3
