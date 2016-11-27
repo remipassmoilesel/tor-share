@@ -1,0 +1,20 @@
+{
+  "name": "www",
+  "homepage": "https://github.com/remipassmoilesel/tor-sharing",
+  "authors": [
+    "remi.passmoilesel <remi.passmoilesel@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "GPLv3",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1"
+  }
+}

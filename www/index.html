@@ -1,5 +1,41 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Tor-sharing</title>
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+    <link href="css/main.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
 
-<h1>Tor-sharing</h1>
+<div class="mainContent">
 
-<p><a href="chat/">Chat</a></p>
-<p><a href="upload/">Upload</a></p>
+    <h1>Tor-sharing</h1>
+
+    <h2>Javascript</h2>
+    <p class="warningJavascript">Warning: Please note that you must activate Javascript to use this service. This
+        can cause a privacy problem. If you trust the person who publishes this service, please activate Javascript.</p>
+
+    <h2>What is this place ?</h2>
+    <p>Here you can chat and share files anonymously.</p>
+    <p><a href="chat/">Chat</a> | <a href="upload/">Upload</a></p>
+
+    <h2>Tor location</h2>
+    <p id="onionUrl"></p>
+
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $.get("hostname").then(function (onionUrl) {
+            $("#onionUrl").html("This service is accessible at: " + onionUrl);
+        }).fail(function () {
+            console.error(arguments);
+            $("#onionUrl").html("Unable to get URL for now, please wait or investigate error ...");
+        });
+    });
+</script>
+
+</body>
+
+</html>
+

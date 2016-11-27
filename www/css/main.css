@@ -1,0 +1,22 @@
+body{
+    background: black;
+    font-size: 13px;
+    font-family: monospace;
+    color: white;
+}
+
+h2{
+    margin-top: 2em;
+}
+
+.mainContent{
+    width: 80%;
+    margin: auto;
+    margin-bottom: 150px;
+}
+
+.warningJavascript{
+    padding: 20px;
+    border: solid 2px red;
+}
+
