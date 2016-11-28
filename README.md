@@ -14,17 +14,6 @@ Features:
 
 ![Screenshot](screenshot.png)
 
-## Authentication
-
-Visits are restricted with Lighttpd basic authentication. Default credentials are:
-
-    anonymous-tux:password
-    anonymous-tux2:password2
-
-Before building you can add users or change passwords:
-    
-    $ vim etc/lighttpd/lighttpd-password
-
 ## Getting started
 
 Launch Tor-sharing on Ubuntu 16.04:
@@ -45,6 +34,17 @@ Launch Tor-sharing on Ubuntu 16.04:
     /!\ Warning /!\ Never, never, never expose port 80 to outside. 
     No one should be able to access container without using TOR. 
 
+## Authentication
+
+Visits are restricted with Lighttpd basic authentication. Default credentials are:
+
+    anonymous-tux:password
+    anonymous-tux2:password2
+
+Before building you can add users or change passwords:
+    
+    $ vim etc/lighttpd/lighttpd-password
+
 ## Before use Tor-sharing
 
 Change all passwords !
@@ -61,8 +61,8 @@ Change all passwords !
         
         172.17.0.2
     
-    # Then visit http://172.17.0.2 address with a normal browser or:
-    $ curl -u anonymous-tux:password http://172.17.0.2/hostname 
+    # Then visit https://172.17.0.2 address with a normal browser or:
+    $ curl -k -u anonymous-tux:password https://172.17.0.2/hostname 
     
         7b436d6e7ipz4kbo.onion
     
@@ -76,6 +76,12 @@ Change all passwords !
     
         # Change default credentials here
         RUN  echo "anonymous-tux:password" | chpasswd
+        
+    # All files are in 'www' directory
+    $ cd /www
+    $ ls .
+    $ ls upload/
+    $ ls chat/
         
 ## Publish a web site
 
