@@ -22,8 +22,8 @@ RUN  ssh-keygen -t dsa -f /etc/ssh/ssh_host_dsa_key
 RUN  ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key
 
 # Change default credentials here
-RUN  adduser -D -g 0 heyhey
-RUN  echo "heyhey:N24WMxSPMOTk8" | chpasswd
+RUN  adduser -D anonymous-tux
+RUN  echo "anonymous-tux:password" | chpasswd
 
 # Copy configuration files
 COPY etc/lighttpd/lighttpd.conf /etc/lighttpd/lighttpd.conf

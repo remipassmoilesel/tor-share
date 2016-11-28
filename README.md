@@ -2,8 +2,10 @@
 
 ## Purpose
 
-With Tor-sharing you can chat, share files or publish a simple PHP website accessible with Tor, The Onion 
- Router. Tor-sharing is a ~50 MB Alpine Linux Docker container. 
+With Tor-sharing you can chat, share files or publish a simple PHP website anonymously on Tor network, The Onion 
+ Router. Tor-sharing is a light Alpine Linux Docker container. 
+
+https://en.wikipedia.org/wiki/Tor_(anonymity_network)
 
 Features:
 * Chat 
@@ -37,13 +39,17 @@ Launch Tor-sharing on Ubuntu 16.04:
     $ git submodule update
     $ docker build . -t tor-sharing
     
-    # Then launch a container and bind ports
+    # Then launch a container and expose Tor port
     $ docker run -d -p 9050:9050 tor-sharing
     
-    /!\ Warning /!\ Never, never, never bind port 80. 
+    /!\ Warning /!\ Never, never, never expose port 80 to outside. 
     No one should be able to access container without using TOR. 
-    
-## Get URL of hidden service
+
+## Before use Tor-sharing
+
+Change all passwords !
+
+## Get URL (location) of hidden service
     
     # First get container IP address 
     $ docker ps 
@@ -55,20 +61,22 @@ Launch Tor-sharing on Ubuntu 16.04:
         
         172.17.0.2
     
-    # Then visit http://172.17.0.2 adress with a normal browser or:
+    # Then visit http://172.17.0.2 address with a normal browser or:
     $ curl -u anonymous-tux:password http://172.17.0.2/hostname 
     
         7b436d6e7ipz4kbo.onion
     
 ## SSH connection for file management
 
-    # After you can connect to SSH with default credentials heyhey:N24WMxSPMOTk8
-    $ ssh -v heyhey@172.17.0.2
+    # When your container is set up, you can connect it in SSH with default credentials (anonymous-tux:password)
+    $ ssh -v anonymous-tux@172.17.0.2
     
-    # To change password check Dockerfile:
+    # You can change account credentials in Dockerfile:
     $ vim Dockerfile
     
         # Change default credentials here
-        RUN  echo "heyhey:N24WMxSPMOTk8" | chpasswd
+        RUN  echo "anonymous-tux:password" | chpasswd
+        
+## Publish a web site
 
-
+All files in 'www/' directory are accessible via Lighttpd server in Tor browser.
