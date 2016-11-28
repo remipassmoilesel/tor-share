@@ -9,7 +9,7 @@ if [ -f "$file" ]
 then
 	cp "$file" "$dest"
 	chmod +r "$dest"
-	echo "'$dest' updated."
+	echo "'$dest' updated: `cat $file`"
 else
 	echo "'$file' not found."
 fi
