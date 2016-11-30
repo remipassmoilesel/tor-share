@@ -3,7 +3,7 @@
 ## Purpose
 
 With Tor-share you can chat, share files or publish a simple PHP website anonymously on Tor network, The Onion 
- Router. Tor-share is a light Alpine Linux Docker container. 
+ Router. Tor-share is a light Alpine Linux Docker image. 
 
 More about Tor network: https://en.wikipedia.org/wiki/Tor_(anonymity_network)
 
@@ -14,25 +14,21 @@ Features:
 
 ![Screenshot](screenshot.png)
 
-## Getting started
+## Launch your hidden service in 2 minutes
 
 Launch Tor-share on Ubuntu 16.04:
 
     # First you need to install Docker
     $ curl -sSL https://get.docker.com/ | sh
-    
-    # After create a Docker image
-    $ git clone https://github.com/remipassmoilesel/tor-share
-    $ cd tor-share
-    $ git submodule init
-    $ git submodule update
-    $ docker build . -t tor-share
-    
-    # Then launch a container and expose Tor port
-    $ docker run -d -p 9050:9050 tor-share
-    
-    /!\ Warning /!\ Never, never, never expose other ports to outside. 
-    No one should be able to access your container without using TOR. 
+   
+    # Then download image and launch container:
+    $ docker run -d -p 9050:9050 remipassmoilesel/tor-share
+     
+    /!\ Warning /!\ 
+    - This is a test image, for maximum safety you have to build your own.
+      See below, this is just about few minutes.
+    - Never, never, never expose other ports to outside. 
+      No one should be able to access your container without using Tor. 
 
 
 ## Get URL (location) of hidden service
@@ -52,9 +48,9 @@ Launch Tor-share on Ubuntu 16.04:
     
         7b436d6e7ipz4kbo.onion
 
-    /!\ All content is accessible throught HTTPS: visitors have to specify https:// and
-    to add a security exception.
-
+    # Then you can visit https://7b436d6e7ipz4kbo.onion with Tor browser.
+    /!\ Visitors have to specify https:// and to add a security exception.
+    
  
 ## Authentication
 
@@ -70,8 +66,9 @@ Before building you can add users or change passwords:
 
 ## Before use Tor-share
 
-Change all passwords !
+- Build your own image ! 
 
+- Change all passwords !
    
 ## SSH connection for file management
 
@@ -94,3 +91,26 @@ Change all passwords !
 ## Publish a web site
 
 All files in 'www/' directory are accessible via Lighttpd server in Tor browser.
+
+
+## Build your own image
+
+On Ubuntu 16.04:
+
+    # First you need to install Docker
+    $ curl -sSL https://get.docker.com/ | sh
+
+    # After clone this repository and create your image
+    $ git clone https://github.com/remipassmoilesel/tor-share
+    $ cd tor-share
+    $ git submodule init
+    $ git submodule update
+    $ docker build . -t tor-share
+    
+    # Then launch a container and expose Tor port
+    $ docker run -d -p 9050:9050 tor-share
+    
+    /!\ Warning /!\ 
+    - Never, never, never expose other ports to outside. 
+      No one should be able to access your container without using Tor. 
+ 
