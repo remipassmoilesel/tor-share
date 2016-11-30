@@ -1,11 +1,11 @@
-# Tor-sharing
+# Tor-share
 
 ## Purpose
 
-With Tor-sharing you can chat, share files or publish a simple PHP website anonymously on Tor network, The Onion 
- Router. Tor-sharing is a light Alpine Linux Docker container. 
+With Tor-share you can chat, share files or publish a simple PHP website anonymously on Tor network, The Onion 
+ Router. Tor-share is a light Alpine Linux Docker container. 
 
-https://en.wikipedia.org/wiki/Tor_(anonymity_network)
+More about Tor network: https://en.wikipedia.org/wiki/Tor_(anonymity_network)
 
 Features:
 * Chat 
@@ -16,20 +16,20 @@ Features:
 
 ## Getting started
 
-Launch Tor-sharing on Ubuntu 16.04:
+Launch Tor-share on Ubuntu 16.04:
 
     # First you need to install Docker
     $ curl -sSL https://get.docker.com/ | sh
     
     # After create a Docker image
-    $ git clone https://github.com/remipassmoilesel/tor-sharing
-    $ cd tor-sharing
+    $ git clone https://github.com/remipassmoilesel/tor-share
+    $ cd tor-share
     $ git submodule init
     $ git submodule update
-    $ docker build . -t tor-sharing
+    $ docker build . -t tor-share
     
     # Then launch a container and expose Tor port
-    $ docker run -d -p 9050:9050 tor-sharing
+    $ docker run -d -p 9050:9050 tor-share
     
     /!\ Warning /!\ Never, never, never expose port 80 to outside. 
     No one should be able to access container without using TOR. 
@@ -45,7 +45,7 @@ Before building you can add users or change passwords:
     
     $ vim etc/lighttpd/lighttpd-password
 
-## Before use Tor-sharing
+## Before use Tor-share
 
 Change all passwords !
 
