@@ -31,23 +31,9 @@ Launch Tor-share on Ubuntu 16.04:
     # Then launch a container and expose Tor port
     $ docker run -d -p 9050:9050 tor-share
     
-    /!\ Warning /!\ Never, never, never expose port 80 to outside. 
-    No one should be able to access container without using TOR. 
+    /!\ Warning /!\ Never, never, never expose other ports to outside. 
+    No one should be able to access your container without using TOR. 
 
-## Authentication
-
-Visits are restricted with Lighttpd basic authentication. Default credentials are:
-
-    anonymous-tux:password
-    anonymous-tux2:password2
-
-Before building you can add users or change passwords:
-    
-    $ vim etc/lighttpd/lighttpd-password
-
-## Before use Tor-share
-
-Change all passwords !
 
 ## Get URL (location) of hidden service
     
@@ -65,7 +51,28 @@ Change all passwords !
     $ curl -k -u anonymous-tux:password https://172.17.0.2/hostname 
     
         7b436d6e7ipz4kbo.onion
+
+    /!\ All content is accessible throught HTTPS: visitors have to specify https:// and
+    to add a security exception.
+
+ 
+## Authentication
+
+Visits are restricted with Lighttpd basic authentication. Default credentials are:
+
+    anonymous-tux:password
+    anonymous-tux2:password2
+
+Before building you can add users or change passwords:
     
+    $ vim etc/lighttpd/lighttpd-password
+
+
+## Before use Tor-share
+
+Change all passwords !
+
+   
 ## SSH connection for file management
 
     # When your container is set up, you can connect it in SSH with default credentials (anonymous-tux:password)
@@ -82,6 +89,7 @@ Change all passwords !
     $ ls .
     $ ls upload/
     $ ls chat/
+
         
 ## Publish a web site
 
